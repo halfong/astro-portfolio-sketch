@@ -8,13 +8,12 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
 });
 ---
 
-<Layout title="Template - All Posts">
-  <main class="flex flex-col gap-20">
-    <h1 class="text-2xl text-white">故事</h1>
-
+<Layout title="All Posts">
+  <main class="flex flex-col gap-12">
+    <h1 class="text-3xl text-white">文章</h1>
     <article class="flex flex-col gap-6">
       { posts.map((post) => (
-          <a class="group flex flex-col gap-2 border-b border-neutral-700 py-4 transition-all hover:border-primary-600 hover:text-primary-400 active:opacity-50"
+          <a class="group flex flex-col gap-2 border-b border-neutral-700 py-6 transition-all hover:border-primary-600 hover:text-primary-400 active:opacity-50"
             href={`/posts/${post.slug}`}>
             <div class="flex w-full items-center justify-between">
               <h2 class="text-2xl">{post.data.title}</h2>

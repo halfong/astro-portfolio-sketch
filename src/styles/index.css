@@ -1,0 +1,16 @@
+.bg-gradient{
+	background: radial-gradient(closest-side, #292602, #171717 );
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+    transform: translateX(0);
+	}
+	50% {
+		transform: translateX(40%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}

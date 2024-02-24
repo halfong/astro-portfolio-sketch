@@ -14,7 +14,7 @@ module.exports = {
 
       },
       fontFamily: {
-        sans: ["var(--font-open-sans)", ...defaultTheme.fontFamily.sans],
+        sans: [...defaultTheme.fontFamily.sans],
       },
     },
   },

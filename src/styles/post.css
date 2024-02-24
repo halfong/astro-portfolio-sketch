@@ -1,5 +1,5 @@
 .post p {
-  @apply leading-loose text-xl text-neutral-300;
+  @apply leading-loose text-xl text-neutral-300 tracking-wide;
 }
 
 .post code {
@@ -7,7 +7,7 @@
 }
 
 .post h2, .post h3 {
-  @apply mt-16 mb-8 tracking-tight text-2xl font-bold text-primary-400;
+  @apply mt-16 mb-8 text-2xl text-primary-400;
 }
 
 .post code {
