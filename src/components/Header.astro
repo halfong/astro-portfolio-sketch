@@ -1,36 +1,31 @@
 ---
 import removeTrailingSlash from "@/utils/removeTrailingSlash";
 import presentation from "@/data/presentation";
+import { Image } from "astro:assets";
 
 const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
-<header class="z-40 flex w-full flex-col gap-2 md:flex-row md:justify-between">
-  <a href={`mailto:${presentation.mail}`} class="hover:text-neutral-100"
-    >{presentation.mail}</a
-  >
-
-  <nav role="navigation">
-    <ul role="list" class="flex flex-row gap-2">
-      <li>
-        <a
-          href="/"
-          class:list={{
-            ["hover:text-neutral-100"]: true,
-            ["text-neutral-100"]: pathname === "/",
-          }}>Home</a
-        >
-      </li>
-      <li>/</li>
-      <li>
-        <a
-          href="/posts"
-          class:list={{
-            ["hover:text-neutral-100"]: true,
-            ["text-neutral-100"]: pathname === "/posts",
-          }}>Posts</a
-        >
-      </li>
-    </ul>
-  </nav>
+<header class="">
+  <div style="height: 95px;"></div>
+  <div class="fixed z-40 top-0 left-0 w-full place-content-center backdrop-blur bg-neutral-900 bg-opacity-70">
+    <div class="max-w-[872px] py-5 px-4 flex flex-row gap-6 mx-auto border-b border-stone-800">
+      <a href="/" class="active:opacity-50">
+        <Image src="/hal-f.png" class="rounded-full" width={58} height={58} alt="Hal-fong brand logo"/>
+      </a>
+    
+      <nav role="navigation">
+        <ul role="list" class="flex flex-row gap-4">{
+          presentation.menu.map( _l =>
+            <li>
+              <a href={ _l.href } class="text-base tracking-wide text-neutral-500 leading-54"
+                class:list={{ ["text-primary-600 underline underline-offset-8"]: pathname === _l.href, }}
+                >{ _l.label }</a>
+            </li>
+          )
+        }
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>

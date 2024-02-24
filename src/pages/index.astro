@@ -19,66 +19,44 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
 
 <Layout>
   <main class="flex flex-col gap-20">
-    <article
-      class="flex flex-col gap-8 md:flex-row-reverse md:justify-end md:gap-12"
-    >
-      {
-        presentation.profile && (
-          <Image
-            src={presentation.profile}
-            class="w-1/4 self-center rounded-full"
-            alt="Your Profile"
-            width="200"
-            height="200"
-          />
-        )
-      }
-
-      <div class="flex flex-col gap-8">
-        <h1 class="text-3xl text-neutral-100">
-          {presentation.title}
-        </h1>
-
-        <h2
-          class="w-auto max-w-[60ch] leading-6"
-          set:html={convertAsteriskToStrongTag(presentation.description)}
-        />
-
+    <article class="flex flex-col-reverse gap-8 md:flex-row md:gap-12">
+      <div class="flex flex-1 flex-col gap-8">
+        <h1 class="text-4xl text-white">{presentation.title}</h1>
+        <h2 class="w-auto max-w-[60ch] leading-6 leading-relaxed"
+          set:html={convertAsteriskToStrongTag(presentation.description)} />
         <SocialLinks />
+      </div>
+      <div class="place-content-center md:place-content-end text-center">
+        { presentation.profile && 
+          <Image src={presentation.profile} class="inline-block rounded-full" width="100" height="100" alt="Hal fong avatar" />
+        }
       </div>
     </article>
 
     <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-100">Latest posts</h3>
-        <Link href="/posts" label="See all posts" isUnderline target="_self" />
+        <h3 class="text-lg text-white">最近发表</h3>
+        <Link cls="text-sm text-primary-600" href="/posts" label="全部文章" isUnderline self />
       </header>
-      {posts.length === 0 && <p>Soon, stay connected 👀...</p>}
+      { posts.length === 0 && <p>还没开始写 👀...</p> }
 
-      <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
-        {
-          posts.length !== 0 &&
-            posts
-              .slice(0, 2)
-              .map((post) => (
-                <PostCard
-                  publishedAt={post.data.publishedAt}
-                  title={post.data.title}
-                  description={post.data.description}
-                  slug={post.slug}
-                />
-              ))
-        }
+      <section class="flex flex-col gap-4 md:flex-row">
+        { posts.length !== 0 && posts .slice(0, 2).map((post) =>
+          <PostCard
+            publishedAt={post.data.publishedAt}
+            title={post.data.title}
+            description={post.data.description}
+            slug={post.slug}
+          />
+        )}
       </section>
     </article>
 
     <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-100">
-          Selected projects ({projects.length})
-        </h3>
+        <h3 class="text-lg text-white">当前项目 ({projects.length})</h3>
       </header>
-      {projects.length === 0 && <p>Oops, I must work^^^^^</p>}
+      { projects.length === 0 && <p>Oops, I must work^^^^^</p> }
 
       <section class="flex flex-col gap-4">
         {
@@ -88,17 +66,11 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
       </section>
     </article>
 
-    <article class="flex flex-col gap-8">
+    <article class="flex flex-col gap-2">
       <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-100">Get in touch</h3>
+        <h3 class="text-lg text-white">联系我</h3>
       </header>
-      <p>
-        Email me at <Link
-          href={`mailto:${presentation.mail}`}
-          label={presentation.mail}
-        /> or follow me via my social links.
-      </p>
-
+      <p>Email <Link href={`mailto:${presentation.mail}`} label={presentation.mail}/></p>
       <SocialLinks />
     </article>
   </main>
