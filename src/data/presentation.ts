@@ -19,7 +19,8 @@ const presentation: Presentation = {
     "你好, i'm a *french frontend developer* with over *3 years* of web experience. I am currently working with *NextJS and Typescript*. Outside of work I complete my pokemon card collection and learning TypeScript.",
   socials: [
     {
-      label: "X",
+      label: null,
+      class: 'icon icon-twitter-x',
       link: "https://twitter.com/halfong",
     },
     // {
@@ -27,13 +28,14 @@ const presentation: Presentation = {
     //   link: "https://bento.me/m-wolff",
     // },
     {
-      label: "Github",
+      label: null,
+      class: 'icon icon-github',
       link: "https://github.com/halfong",
     },
   ],
   menu : [
     { label:'首页', href:'/' },
-    { label:'文章', href:'/posts' }
+    { label:'故事', href:'/posts' }
   ]
 };
 

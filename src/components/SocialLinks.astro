@@ -3,10 +3,14 @@ import Link from "./shared/Link.astro";
 import presentation from "@/data/presentation";
 ---
 
-<ul role="list" class="flex flex-row gap-2">
+<ul role="list" class="flex flex-row" style="margin-left:-10px">
   {
     presentation.socials.map((social, index) => (
-      <li><Link href={social.link} label={social.label} /></li>
+      <li>
+        <a class="p-3 rounded-full text-primary-600 active:opacity-50 hover:bg-stone-800 hover" href={social.link} rel="noreferrer" target="_blank">
+          <span class={`text-2xl ${ social.class }`} />
+        </a>
+      </li>
     ))
   }
 </ul>
