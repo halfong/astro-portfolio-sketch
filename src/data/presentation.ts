@@ -13,7 +13,7 @@ type Presentation = {
 
 const presentation: Presentation = {
   mail: "0xhalfong@gmail.com",
-  title: "Hi, 我是Hal 👋",
+  title: "嗨, 我是Hal 👋",
   profile: "https://avatars.githubusercontent.com/u/2819116?v=4",
   description:
     "你好, i'm a *french frontend developer* with over *3 years* of web experience. I am currently working with *NextJS and Typescript*. Outside of work I complete my pokemon card collection and learning TypeScript.",

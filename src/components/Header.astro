@@ -7,18 +7,21 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
 <header class="">
-  <div style="height: 95px;"></div>
+  <div style="height: 90px;"></div>
   <div class="fixed z-40 top-0 left-0 w-full place-content-center backdrop-blur bg-neutral-900 bg-opacity-70">
-    <div class="max-w-[872px] py-5 px-4 flex flex-row gap-6 mx-auto border-b border-stone-800">
-      <a href="/" class="active:opacity-50">
-        <Image src="/hal-f.png" class="rounded-full" width={58} height={58} alt="Hal-fong brand logo"/>
-      </a>
+    <div class="max-w-[872px] py-6 px-4 flex flex-row gap-6 mx-auto border-b border-neutral-900 border-blend-lighten">
+
+      <div class="flex-1">
+        <a href="/" class="active:opacity-50">
+          <Image src="/hal-f.png" class="rounded-full" width={54} height={54} alt="Hal-fong brand logo"/>
+        </a>
+      </div>
     
-      <nav role="navigation">
-        <ul role="list" class="flex flex-row gap-4">{
+      <nav role="navigation flex-0">
+        <ul role="list" class="flex flex-row gap-4 pr-2">{
           presentation.menu.map( _l =>
-            <li>
-              <a href={ _l.href } class="text-base tracking-wide text-neutral-500 leading-54"
+            <li class="active:opacity-50">
+              <a href={ _l.href } class="text-base tracking-wide text-neutral-500" style="line-height: 48px;"
                 class:list={{ ["text-primary-600 underline underline-offset-8"]: pathname === _l.href, }}
                 >{ _l.label }</a>
             </li>
