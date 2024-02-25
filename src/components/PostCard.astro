@@ -14,7 +14,7 @@ const { title, publishedAt, description, slug } = Astro.props;
 <a class="group flex flex-1 md:w-20 cursor-pointer flex-col gap-2 rounded-lg border border-neutral-700 p-4 transition-all duration-100 hover:-translate-y-2 hover:border-primary-400"
   href={`/posts/${slug}`}>
   <div class="flex w-full flex-col justify-between gap-2 md:flex-row md:items-center">
-    <p class="text-white">{title}</p>
+    <p class="text-primary-100">{title}</p>
     <div class="flex flex-row items-center gap-4">
       <p>{formatDate(publishedAt)}</p>
       <span class="icon icon-upper-right-arrow text-neutral-500 transition-all duration-300 group-hover:translate-x-1"/>

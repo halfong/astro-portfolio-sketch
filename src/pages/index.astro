@@ -21,7 +21,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
   <main class="flex flex-col gap-20">
     <article class="flex flex-col-reverse gap-8 md:flex-row md:gap-12">
       <div class="flex flex-1 flex-col">
-        <h1 class="text-4xl text-white mb-8">{presentation.title}</h1>
+        <h1 class="text-4xl text-primary-100 mb-8">{presentation.title}</h1>
         <h2 class="text-base w-auto max-w-[60ch] leading-6 leading-relaxed mb-4"
           set:html={convertAsteriskToStrongTag(presentation.description)} />
         <SocialLinks />
@@ -36,7 +36,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
 
     <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-white">最近发表</h3>
+        <h3 class="text-lg text-primary-100">最近发表</h3>
         <Link cls="text-sm text-primary-600" href="/posts" label="全部文章" isUnderline self />
       </header>
       { posts.length === 0 && <p>还没开始写 👀...</p> }
@@ -55,7 +55,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
 
     <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-white">当前项目 ({projects.length})</h3>
+        <h3 class="text-lg text-primary-100">当前项目 ({projects.length})</h3>
       </header>
       { projects.length === 0 && <p>Oops, I must work^^^^^</p> }
 
