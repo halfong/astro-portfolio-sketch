@@ -1,12 +1,12 @@
 .post p {
-  @apply leading-loose text-xl text-primary-100 tracking-wider mb-8;
+  @apply leading-loose text-xl text-primary-100 tracking-wider my-8;
 }
 
 .post code {
   @apply rounded-sm bg-neutral-800 px-1 py-[2px] text-emerald-600;
 }
 
-.post h2, .post h3 {
+.post h1, .post h2, .post h3 {
   @apply mt-16 mb-8 text-2xl text-primary-400;
 }
 
@@ -23,7 +23,10 @@
 }
 
 .post blockquote {
-  @apply flex flex-row py-4 gap-5 text-sm before:block before:h-auto before:w-2 before:max-w-[2px] before:bg-primary-400 before:content-[''];
+  @apply flex text-neutral-600 flex-row py-1 gap-5 text-sm before:block before:h-auto before:w-2 before:max-w-[2px] before:bg-primary-400 before:content-[''] my-8;
+  p {
+    @apply my-0 italic text-sm
+  }
 }
 
 .post pre {
