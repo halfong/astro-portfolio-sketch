@@ -9,6 +9,7 @@ module.exports = {
         '54': '54px',
       },
       colors: {
+        'primary-100': '#cdc9ae',
         'primary-600': '#FAE44C',
         'primary-400': '#FAE44C',
 
